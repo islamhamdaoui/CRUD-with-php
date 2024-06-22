@@ -63,7 +63,6 @@ while($data = $respond ->fetch()) {
     }
     echo "<td>" . "<a href='delete.php?id=$data[0]'>Delete</a>" . "</td>";
     echo "<td>" . "<a href='editform.php?id=$data[0]'>Edit</a>" . "</td>";
-
     echo"</tr>";
 }
 echo "</table>";

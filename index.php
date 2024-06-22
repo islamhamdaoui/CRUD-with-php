@@ -22,8 +22,9 @@ if(isset($_SESSION['user'])){
 
  <form action="login.php" method="post" >
 
- <input type="text" placeholder="Enter name" name="name"> <br><br>
-           <input type="password" name="pass" placeholder="Enter password"> <br><br>
+ <input type="text" placeholder="Enter name" name="name" value="<?php if(isset($_COOKIE['username'])) echo $_COOKIE['username'] ?>"> <br><br>
+           <input type="password" name="pass" placeholder="Enter password" value="<?php if(isset($_COOKIE['password'])) echo $_COOKIE['username'] ?>"> <br><br>
+        <input type="checkbox" id="checkbox" name="check"> <label for="checkbox">Remember me?</label> <br><br>
 <input type="submit">
  </form>
 
