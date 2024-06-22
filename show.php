@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Users table</h1>
-    <button class="add">Add new user</button>
-    <button>Go home</button>
+    <button class="add"  onclick="window.location.href='insertform.php'">Add new user</button>
+    <button  onclick="window.location.href='home.php'">Go home</button> <br><br><br>
 
 
     <style>
@@ -33,18 +33,36 @@
 
 <?php
 require("connection.php");
+$respond = $bdd ->query("SELECT * FROM user");
+$column= $respond -> columnCount();
+
 
  echo"<table border=1 >";
 
  echo "
   <tr>
   <th>ID</th>
-  <th></th>
+  <th>Name</th>
+  <th>Family name</th>
+  <th>Age</th>
+  <th>Study field</th>
   
   </tr>
-  
- 
   ";
+
+while($data = $respond ->fetch()) {
+
+
+    echo"<tr>";
+    for($i=0; $i < $column; $i++) {
+        echo "<td>".$data[$i]."</td>";
+    }
+    echo "<td>" . "<a href='delete.php?id=$data[0]'>Delete</a>" . "</td>";
+    echo "<td>" . "<a href='editform.php?id=$data[0]'>Edit</a>" . "</td>";
+
+    echo"</tr>";
+}
+echo "</table>";
 
 
 ?>
