@@ -1,10 +1,9 @@
 <?php
-session_start();
+
+require("auth.php");
+
 echo "<h1>Welcome ".  $_SESSION['username'] . " </h1>"; 
 
-if(!isset($_SESSION["user"])) {
-   header("location:index.php");
-}
 
 ?>
 

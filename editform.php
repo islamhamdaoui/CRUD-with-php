@@ -1,4 +1,9 @@
 <?php
+
+
+require("auth.php");
+
+
   require("connection.php");
  $id = $_GET['id'];
 

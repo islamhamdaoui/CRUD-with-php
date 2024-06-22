@@ -1,4 +1,9 @@
 <?php
+
+
+require("auth.php");
+
+
 require("connection.php");
 $name = $_POST['name'];
 $fname = $_POST['fname'];
@@ -16,3 +21,5 @@ $insert ->execute(array(
 ));
 
 header("location:insertform.php");
+
+?>
