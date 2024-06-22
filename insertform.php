@@ -11,10 +11,11 @@
     <input type="text" placeholder="Name" name="name"> <br><br>
     <input type="text" placeholder="Family name" name="fname"><br><br>
     <input type="number" placeholder="Age" name="age"><br><br>
-    <input type="number" placeholder="Study field" name="study"> <br><br>
+    <input type="text" placeholder="Study field" name="study"> <br><br>
     <input type="submit" value="Add user">
 
     </form>
+    <button  onclick="window.location.href='home.php'">Go Home</button>
 
     <style>
 
@@ -34,6 +35,19 @@
             color: white;
             font-weight: bold;
             cursor: pointer;
+        }
+        
+        button{
+            padding: 10px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight:bold;
+            color:#fff ;
+            background-color: tomato;
+            cursor: pointer;
+            max-width: 330px;
+            width: 100%;
+            margin-top: 10px;
         }
     </style>
 </body>
