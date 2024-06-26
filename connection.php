@@ -4,6 +4,11 @@ $dbname = "users";
 $username= "root";
 $password = "";
 
-$bdd = new PDO("mysql:host=localhost; dbname=users","root","");
-
+try {
+    $bdd = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch (PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
 ?>
